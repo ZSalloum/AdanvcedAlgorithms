@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdvancedAlgorithms\Algorithms.Toolkit.csproj">
+    <ProjectReference Include="..\Algorithms.Toolkit\Algorithms.Toolkit.csproj">
       <Project>{cd1d6fcc-1b51-46da-9b88-a711c12a748f}</Project>
       <Name>Algorithms.Toolkit</Name>
     </ProjectReference>
