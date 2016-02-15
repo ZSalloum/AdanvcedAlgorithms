@@ -9,13 +9,13 @@ using Algorithms.Toolkit.Common;
 
 namespace Algorithms.Toolkit.DataStructures
 {
-    public class MaxHeap<T> : BaseHeap<T>
+    public class MinHeap<T> : BaseHeap<T>
                 where T : IComparable
     {
 
         protected override bool Compare(T a, T b)
         {
-            return Less(a, b);
+            return Greater(a, b);
         }
     }
 }
