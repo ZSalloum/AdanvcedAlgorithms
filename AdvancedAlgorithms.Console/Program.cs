@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdvancedAlgorithms.Sorting;
-using AdvancedAlgorithms.DataStructures;
+using Algorithms.Toolkit.Sorting;
+using Algorithms.Toolkit.DataStructures;
 
 namespace AdvancedAlgorithms.Console
 {

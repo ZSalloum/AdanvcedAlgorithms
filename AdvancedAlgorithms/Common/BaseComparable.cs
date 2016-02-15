@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdvancedAlgorithms.Common
+namespace Algorithms.Toolkit.Common
 {
     public class BaseComparable<T> where T : IComparable
     {

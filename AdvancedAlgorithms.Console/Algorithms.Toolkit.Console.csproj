@@ -7,8 +7,8 @@
     <ProjectGuid>{2B4544EB-1B03-41B7-96B1-3D99733A1385}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdvancedAlgorithms.Console</RootNamespace>
-    <AssemblyName>AdvancedAlgorithms.Console</AssemblyName>
+    <RootNamespace>Algorithms.Toolkit.Console</RootNamespace>
+    <AssemblyName>Algorithms.Toolkit.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdvancedAlgorithms\AdvancedAlgorithms.csproj">
+    <ProjectReference Include="..\AdvancedAlgorithms\Algorithms.Toolkit.csproj">
       <Project>{cd1d6fcc-1b51-46da-9b88-a711c12a748f}</Project>
-      <Name>AdvancedAlgorithms</Name>
+      <Name>Algorithms.Toolkit</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdvancedAlgorithms.Sorting
+namespace Algorithms.Toolkit.Sorting
 {
     public class MergeSort<T> : BaseSort<T>
         where T : IComparable

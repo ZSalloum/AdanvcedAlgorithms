@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedAlgorithms", "AdvancedAlgorithms\AdvancedAlgorithms.csproj", "{CD1D6FCC-1B51-46DA-9B88-A711C12A748F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Toolkit", "AdvancedAlgorithms\Algorithms.Toolkit.csproj", "{CD1D6FCC-1B51-46DA-9B88-A711C12A748F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedAlgorithms.Console", "AdvancedAlgorithms.Console\AdvancedAlgorithms.Console.csproj", "{2B4544EB-1B03-41B7-96B1-3D99733A1385}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Toolkit.Console", "AdvancedAlgorithms.Console\Algorithms.Toolkit.Console.csproj", "{2B4544EB-1B03-41B7-96B1-3D99733A1385}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

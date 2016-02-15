@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdvancedAlgorithms.Sorting
+namespace Algorithms.Toolkit.Sorting
 {
     public class HeapSort<T> : BaseSort<T>
         where T : IComparable

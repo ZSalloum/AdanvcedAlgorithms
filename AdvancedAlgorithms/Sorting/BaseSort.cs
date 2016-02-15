@@ -1,11 +1,11 @@
-﻿using AdvancedAlgorithms.Common;
+﻿using Algorithms.Toolkit.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdvancedAlgorithms.Sorting
+namespace Algorithms.Toolkit.Sorting
 {
     public class BaseSort<T> : BaseComparable<T> 
         where T : IComparable
