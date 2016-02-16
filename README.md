@@ -2,7 +2,7 @@
 
 (under construction) 
 
-This is a C# library intended to gather the most useful and powerful algorithms.
+This is a C# library intended to gather the most useful and most efficient algorithms in the field.
 
 Sorting:
 - QuickSort
