@@ -10,12 +10,12 @@ This is a C# library intended to gather the most useful and most efficient algor
 - HeapSort
 - 3Way QuickSort (coming soon)
 
-##DataStructures:
+###DataStructures:
 - Min/Max Heap
 - UnionFind
 - RedBlack Tree (coming soon)
 - Tries (coming soon)
 
 
-##Graphs: 
+###Graphs: 
 (coming soon)
