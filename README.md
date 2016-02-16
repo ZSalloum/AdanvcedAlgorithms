@@ -4,7 +4,7 @@
 
 This is a C# library intended to gather the most useful and most efficient algorithms in the field.
 
-###Sorting:
+######Sorting:
 - QuickSort
 - MergeSort
 - HeapSort
