@@ -10,10 +10,12 @@ namespace Algorithms.Toolkit.Sorting
         where T : IComparable
     {
         private T[] data;
+        private SortDirection direction;
 
-        public void Sort(T[] a)
+        public void Sort(T[] a, SortDirection direction)
         {
             data = a;
+            this.direction = direction;
             Sort();
         }
 
@@ -39,11 +41,11 @@ namespace Algorithms.Toolkit.Sorting
             {
                 int j = index * 2;
 
-                if (j < length && Less(data[j], data[j + 1]))
+                if (j < length && Compare(data[j], data[j + 1]))
                 {
                     j++;
                 }
-                if (!Less(data[index], data[j])) break;
+                if (!Compare(data[index], data[j])) break;
                 Swap(index, j);
                 index = j;
             }
@@ -54,6 +56,20 @@ namespace Algorithms.Toolkit.Sorting
             T t = data[i];
             data[i] = data[j];
             data[j] = t;
+        }
+
+        private bool Compare(T a, T b)
+        {
+            if(direction == SortDirection.Ascending)
+            {
+                return Less(a, b);
+            }
+            else // (direction == SortDirection.Descending)
+            {
+                return Greater(a, b);
+            }
+
+            
         }
 
     }

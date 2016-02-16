@@ -49,6 +49,7 @@
     <Compile Include="Sorting\HeapSort.cs" />
     <Compile Include="Sorting\MergeSort.cs" />
     <Compile Include="Sorting\QuickSort.cs" />
+    <Compile Include="Sorting\SortDirection.cs" />
     <Compile Include="Sorting\SortHelper.cs" />
   </ItemGroup>
   <ItemGroup />

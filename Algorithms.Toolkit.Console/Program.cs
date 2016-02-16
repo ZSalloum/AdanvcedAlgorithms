@@ -16,7 +16,7 @@ namespace AdvancedAlgorithms.Console
 
             //TestQuickSort(a);
             //TestMergeSort(a);
-            //TestMaxHeap();
+            TestMinMaxHeap();
             //TestHeapSort();
 
             System.Console.WriteLine("\n\nPress ENTER to quit");
@@ -67,33 +67,53 @@ namespace AdvancedAlgorithms.Console
             int[] a = {0, 1, 4, 6, 8, 10, 2, 5, 3, 0, 7 };
             HeapSort<int> mh = new HeapSort<int>();
 
-            mh.Sort(a);
+            System.Console.WriteLine("HeapSort Ascending");
+            mh.Sort(a, SortDirection.Ascending);
+            DisplayArray(a);
+            DisplaySeparator();
+
+            System.Console.WriteLine("HeapSort Descending");
+            mh.Sort(a, SortDirection.Descending);
             DisplayArray(a);
             DisplaySeparator();
         }
 
-        private static void TestMaxHeap()
+        private static void TestMinMaxHeap()
         {
             int[] a = { 1, 4, 6, 8, 10, 2, 5, 3, 0, 7 };
-            MaxHeap<int> mh = new MaxHeap<int>();
+            MaxHeap<int> maxh = new MaxHeap<int>();
+            MinHeap<int> minh = new MinHeap<int>();
 
             for (int i = 0; i < a.Length; i++)
             {
-                mh.Push(a[i]);
+                maxh.Push(a[i]);
+                minh.Push(a[i]);
             }
 
-            DisplayArray(mh.ToArray());
+            DisplayArray(maxh.ToArray());
             DisplaySeparator();
 
             for (int i = 0; i < a.Length; i++)
             {
-                int v = mh.Pop();
+                int v = maxh.Pop();
                 System.Console.Write("Pop {0}  :  ", v);
-                DisplayArray(mh.ToArray());
+                DisplayArray(maxh.ToArray());
                 System.Console.WriteLine("");
             }
 
-            DisplayArray(mh.ToArray());
+            DisplayArray(maxh.ToArray());
+            DisplaySeparator();
+
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                int v = minh.Pop();
+                System.Console.Write("Pop {0}  :  ", v);
+                DisplayArray(minh.ToArray());
+                System.Console.WriteLine("");
+            }
+
+            DisplayArray(minh.ToArray());
             DisplaySeparator();
         }
 
