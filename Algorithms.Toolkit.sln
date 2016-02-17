@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Toolkit", "Algor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Toolkit.Console", "Algorithms.Toolkit.Console\Algorithms.Toolkit.Console.csproj", "{2B4544EB-1B03-41B7-96B1-3D99733A1385}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C94EFC3D-0797-4575-BF2B-A59414EA2F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Toolkit.UnitTest", "Algorithms.Toolkit.UnitTest\Algorithms.Toolkit.UnitTest.csproj", "{E555ED5A-CF61-42A8-86D3-5CC8669634F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +25,15 @@ Global
 		{2B4544EB-1B03-41B7-96B1-3D99733A1385}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B4544EB-1B03-41B7-96B1-3D99733A1385}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B4544EB-1B03-41B7-96B1-3D99733A1385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E555ED5A-CF61-42A8-86D3-5CC8669634F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E555ED5A-CF61-42A8-86D3-5CC8669634F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E555ED5A-CF61-42A8-86D3-5CC8669634F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E555ED5A-CF61-42A8-86D3-5CC8669634F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E555ED5A-CF61-42A8-86D3-5CC8669634F7} = {C94EFC3D-0797-4575-BF2B-A59414EA2F05}
 	EndGlobalSection
 EndGlobal
