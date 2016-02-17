@@ -11,13 +11,15 @@ namespace Algorithms.Toolkit.Sorting
         where T : IComparable
     {
         private T[] tmp;
+        private SortDirection direction;
 
-        public void Sort(T[] a)
+        public void Sort(T[] a, SortDirection direction)
         {
             tmp = new T[a.Length];
+            this.direction = direction;
             Sort(a, 0, a.Length - 1);
             tmp = null;
-            Debug.Assert(IsSortedAsc(a, 0, a.Length - 1));
+            Debug.Assert(IsSorted(a, 0, a.Length - 1, direction));
         }
 
         private void Sort(T[] a, int lo, int hi)
@@ -47,11 +49,21 @@ namespace Algorithms.Toolkit.Sorting
             {
                 if (i > mid)                a[k] = tmp[j++];
                 else if (j > hi)            a[k] = tmp[i++];
-                else if (Less(tmp[i], tmp[j]))  a[k] = tmp[i++];
+                else if (Compare(tmp[i], tmp[j]))  a[k] = tmp[i++];
                 else                        a[k] = tmp[j++];
             }
 
-            Debug.Assert(IsSortedAsc(a, lo, hi));
+            Debug.Assert(IsSorted(a, lo, hi, direction));
+        }
+
+        private bool Compare(T a, T b)
+        {
+            if(direction == SortDirection.Ascending)
+            {
+                return Less(a, b);
+            }
+
+            return Greater(a, b);
         }
 
     }

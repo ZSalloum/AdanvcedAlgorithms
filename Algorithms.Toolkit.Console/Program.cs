@@ -14,9 +14,9 @@ namespace AdvancedAlgorithms.Console
         {
             int[] a = { 10, 4, 6, 8, 2, 5, 3, 0, 7 };
 
-            //TestQuickSort(a);
+            TestQuickSort(a);
             //TestMergeSort(a);
-            TestMinMaxHeap();
+            //TestMinMaxHeap();
             //TestHeapSort();
 
             System.Console.WriteLine("\n\nPress ENTER to quit");
@@ -33,7 +33,7 @@ namespace AdvancedAlgorithms.Console
                 a[i] = i;// a.Length - i;
             }
             QuickSort<int> qs = new QuickSort<int>();
-            qs.Sort(a);
+            qs.Sort(a, SortDirection.Ascending);
             //DisplayArray(a);
             System.Console.WriteLine("Comparison in sorted array : {0}", qs.ComparisonCount);
             
@@ -47,7 +47,7 @@ namespace AdvancedAlgorithms.Console
                 a[j] = tmp;
             }
             //DisplayArray(a);
-            qs.Sort(a);
+            qs.Sort(a, SortDirection.Ascending);
 
             //DisplayArray(a);
             System.Console.WriteLine("Comparison in random array : {0}", qs.ComparisonCount);
@@ -57,7 +57,10 @@ namespace AdvancedAlgorithms.Console
 
         private static void TestMergeSort(int[] a)
         {
-            SortHelper.MergeSort(a);
+            SortHelper.MergeSort(a, SortDirection.Ascending);
+            DisplayArray(a);
+            DisplaySeparator();
+            SortHelper.MergeSort(a, SortDirection.Descending);
             DisplayArray(a);
             DisplaySeparator();
         }

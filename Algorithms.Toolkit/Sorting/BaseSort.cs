@@ -11,7 +11,14 @@ namespace Algorithms.Toolkit.Sorting
         where T : IComparable
     {
 
-
+        protected bool IsSorted(T[] a, int lo, int hi, SortDirection direction)
+        {
+            if(direction == SortDirection.Ascending)
+            {
+                return IsSortedAsc(a, lo, hi);
+            }
+            return IsSortedDesc(a, lo, hi);
+        }
 
         protected bool IsSortedAsc(T[] a, int lo, int hi)
         {

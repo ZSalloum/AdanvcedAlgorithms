@@ -10,18 +10,18 @@ namespace Algorithms.Toolkit.Sorting
     public class QuickSort<T> : BaseSort<T>
         where T : IComparable
     {
+        private SortDirection direction;
+        //public static void SortInt(int[] a)
+        //{
+        //    QuickSort<int> intQS = new QuickSort<int>();
+        //    intQS.Sort(a);
+        //}
 
-        public static void SortInt(int[] a)
-        {
-            QuickSort<int> intQS = new QuickSort<int>();
-            intQS.Sort(a);
-        }
-
-        public void Sort(T[] a)
+        public void Sort(T[] a, SortDirection direction)
         {
             ResetCounters();
             Sort(a, 0, a.Length - 1);
-            Debug.Assert(IsSortedAsc(a, 0, a.Length - 1));
+            Debug.Assert(IsSorted(a, 0, a.Length - 1, direction));
         }
 
         private void Sort(T[] a, int lo, int hi)
@@ -44,8 +44,8 @@ namespace Algorithms.Toolkit.Sorting
 
             while(true)
             {
-                while (Less(a[++i], pivot)) if (i == hi) break;
-                while (Less(pivot, a[--j])) if (j == lo) break;
+                while (Compare(a[++i], pivot)) if (i == hi) break;
+                while (Compare(pivot, a[--j])) if (j == lo) break;
                 if (i >= j) break;
                 Swap(a, i, j);
 
@@ -61,6 +61,16 @@ namespace Algorithms.Toolkit.Sorting
             T t = a[i];
             a[i] = a[j];
             a[j] = t;
+        }
+
+        private bool Compare(T a, T b)
+        {
+            if (direction == SortDirection.Ascending)
+            {
+                return Less(a, b);
+            }
+
+            return Greater(a, b);
         }
 
     }

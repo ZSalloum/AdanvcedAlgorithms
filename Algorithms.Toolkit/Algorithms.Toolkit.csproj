@@ -43,6 +43,7 @@
     <Compile Include="DataStructures\BaseHeap.cs" />
     <Compile Include="DataStructures\MinHeap.cs" />
     <Compile Include="DataStructures\MaxHeap.cs" />
+    <Compile Include="DataStructures\RedBlackTree.cs" />
     <Compile Include="DataStructures\UnionFind.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorting\BaseSort.cs" />

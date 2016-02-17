@@ -8,10 +8,10 @@ namespace Algorithms.Toolkit.Sorting
 {
     public static class SortHelper
     {
-        public static void MergeSort(int[] a)
+        public static void MergeSort(int[] a, SortDirection direction)
         {
             MergeSort<int> ms = new MergeSort<int>();
-            ms.Sort(a);
+            ms.Sort(a, direction);
         }
     }
 }
