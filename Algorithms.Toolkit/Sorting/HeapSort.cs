@@ -27,10 +27,17 @@ namespace Algorithms.Toolkit.Sorting
                 Demote(i, l);
             }
 
+            // now the head contains the biggest or smallest number (deending on sort order/direction)
+            // in order to sort we pull that number from the head and put it aside, then recompute the heap
+            // to find a new biggest or smallest number then pull it and put it next to the previously pulled number,
+            // etc....
+            // However putting those numbers pulled from the head in an another array will consume more space than we want to.
+            // That's why we put them at the end of the same array, while taking care of telling the algorithm that the
+            // part of the array representing the heap is getting shorter in theory (its length is decreasing)
             l = data.Length - 1;
             while (l > 1)
             {
-                Swap(1, l--);
+                SwapPositions(1, l--);
                 Demote(1, l);
             }
         }
@@ -46,12 +53,12 @@ namespace Algorithms.Toolkit.Sorting
                     j++;
                 }
                 if (!Compare(data[index], data[j])) break;
-                Swap(index, j);
+                SwapPositions(index, j);
                 index = j;
             }
         }
 
-        private void Swap(int i, int j)
+        private void SwapPositions(int i, int j)
         {
             T t = data[i];
             data[i] = data[j];
