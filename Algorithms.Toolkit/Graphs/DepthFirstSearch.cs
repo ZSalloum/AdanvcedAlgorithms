@@ -6,69 +6,31 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Toolkit.Graphs
 {
-    public class DepthFirstSearch
+    public class DepthFirstSearch : BaseGraphSearch
     {
-        private bool[] marked;
-        private int[] edgeTo;
-        private IGraph graph;
-        private int count;
-        private int origin;
 
-        public DepthFirstSearch(IGraph g)
+        public DepthFirstSearch(IGraph g) : base(g)
         {
-            graph = g;
-            marked = new bool[g.VerticesCount];
         }
 
-        public void Start(int v)
+        public override void Run(int start)
         {
             Reset();
-            origin = v;
-            DFS(v);
+            origin = start;
+            DFS(start);
         }
 
-        public int Origin
+        public override void Continue(int start)
         {
-            get
-            {
-                return origin;
-            }
+            DFS(start);
         }
 
-        public bool IsMarked(int v)
-        {
-            return marked[v];
-        }
-
-        public int Count
-        {
-            get
-            {
-                return count;
-            }
-        }
-
-        public bool HasPathTo(int v)
-        {
-            return IsMarked(v);
-        }
-
-        public int[] GetPathTo(int v)
-        {
-            if (!HasPathTo(v)) return null;
-            Stack<int> path = new Stack<int>();
-            for(int x = v; x != origin; x = edgeTo[x])
-            {
-                path.Push(x);
-            }
-            path.Push(origin);
-            return path.ToArray();
-        }
-
-        private void DFS(int v)
+        protected virtual void DFS(int v)
         {
             count++;
             marked[v] = true;
+            OnVisiting(v);
+
             foreach (int w in graph.AdjacentsOf(v))
             {
                 if (!marked[w])
@@ -79,14 +41,5 @@ namespace Algorithms.Toolkit.Graphs
             }
         }
 
-        private void Reset()
-        {
-            count = 0;
-            for(int i = 0; i < graph.VerticesCount; i++)
-            {
-                marked[i] = false;
-                edgeTo[i] = -1;
-            }
-        }
     }
 }
