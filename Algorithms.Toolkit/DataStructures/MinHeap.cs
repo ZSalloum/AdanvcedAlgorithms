@@ -10,7 +10,7 @@ using Algorithms.Toolkit.Common;
 namespace Algorithms.Toolkit.DataStructures
 {
     public class MinHeap<T> : BaseHeap<T>
-                where T : IComparable
+                where T : IComparable<T>
     {
 
         protected override bool Compare(T a, T b)

@@ -9,13 +9,13 @@ using Algorithms.Toolkit.Common;
 namespace Algorithms.Toolkit.DataStructures
 {
     public abstract class BaseHeap<T> : BaseComparable<T>
-        where T : IComparable
+        where T : IComparable<T>
     {
         private List<T> data = new List<T>();
 
         public BaseHeap()
         {
-            data.Add(default(T));
+            Init();
         }
 
         public void Push(T v)
@@ -38,9 +38,30 @@ namespace Algorithms.Toolkit.DataStructures
             throw new ApplicationException("Empty heap");
         }
 
+        public void Clear()
+        {
+            Init();
+        }
+
         public T[] ToArray()
         {
             return data.ToArray();
+        }
+
+        public int Count
+        {
+            get
+            {
+                return data.Count - 1;
+            }
+        }
+
+        public bool IsEmpty
+        {
+            get
+            {
+                return Count == 0;
+            }
         }
 
         protected abstract bool Compare(T a, T b);
@@ -75,6 +96,12 @@ namespace Algorithms.Toolkit.DataStructures
             T t = data[i];
             data[i] = data[j];
             data[j] = t;
+        }
+
+        private void Init()
+        {
+            data.Clear();
+            data.Add(default(T));
         }
 
     }

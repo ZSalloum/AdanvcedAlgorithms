@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Algorithms.Toolkit.Sorting
 {
     public class QuickSort<T> : BaseSort<T>
-        where T : IComparable
+        where T : IComparable<T>
     {
         private SortDirection direction;
         //public static void SortInt(int[] a)
@@ -20,6 +20,7 @@ namespace Algorithms.Toolkit.Sorting
         public void Sort(T[] a, SortDirection direction)
         {
             ResetCounters();
+            this.direction = direction;
             Shuffle.ShuffleArray<T>(a);
             Sort(a, 0, a.Length - 1);
             Debug.Assert(IsSorted(a, 0, a.Length - 1, direction));

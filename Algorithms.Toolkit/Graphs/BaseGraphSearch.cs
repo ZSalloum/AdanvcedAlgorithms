@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Algorithms.Toolkit.Graphs
 {
     public delegate void VisitingVertexHandler(BaseGraphSearch sender, int v);
+    public delegate void VisitedVertexHandler(BaseGraphSearch sender, int v);
 
     public abstract class BaseGraphSearch
     {
@@ -17,6 +18,7 @@ namespace Algorithms.Toolkit.Graphs
         protected int origin;
 
         public event VisitingVertexHandler VisitingVertex;
+        public event VisitedVertexHandler VisitedVertex;
 
         public BaseGraphSearch(IGraph g)
         {
@@ -39,7 +41,7 @@ namespace Algorithms.Toolkit.Graphs
             }
         }
 
-        public bool IsMarked(int v)
+        public bool IsVisited(int v)
         {
             return marked[v];
         }
@@ -54,7 +56,7 @@ namespace Algorithms.Toolkit.Graphs
 
         public bool HasPathTo(int v)
         {
-            return IsMarked(v);
+            return IsVisited(v);
         }
 
         public int[] GetPathTo(int v)
@@ -69,7 +71,7 @@ namespace Algorithms.Toolkit.Graphs
             return path.ToArray();
         }
 
-        public void Reset()
+        public virtual void Reset()
         {
             count = 0;
             for (int i = 0; i < graph.VerticesCount; i++)
@@ -84,6 +86,14 @@ namespace Algorithms.Toolkit.Graphs
             if(VisitingVertex != null)
             {
                 VisitingVertex(this, v);
+            }
+        }
+
+        protected virtual void OnVisited(int v)
+        {
+            if (VisitedVertex != null)
+            {
+                VisitedVertex(this, v);
             }
         }
     }

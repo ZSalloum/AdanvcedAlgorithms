@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Toolkit.Graphs
 {
-    public class ConnectedComponents
+    public class StronglyConnectedComponents
     {
         private int[] components;
         private int componentId = 0;
         private DepthFirstSearch dfs;
-        private IGraph graph;
+        private IDirectedGraph graph;
 
-        public ConnectedComponents(IGraph g) {
+        public StronglyConnectedComponents(IDirectedGraph g) {
             graph = g;
             dfs = new DepthFirstSearch(g);
             dfs.VisitingVertex += Dfs_VisitingVertex;
@@ -23,7 +23,10 @@ namespace Algorithms.Toolkit.Graphs
         {
             Reset();
             components = new int[graph.VerticesCount];
-            for(int v = 0; v < graph.VerticesCount; v++)
+            TopologicalSort ts = new TopologicalSort(graph);
+            ts.Run(0);
+
+            for(int v = 0; v < ts.ReverseOrder().Length; v++)
             {
                 if (!dfs.IsVisited(v))
                 {

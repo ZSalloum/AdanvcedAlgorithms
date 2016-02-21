@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Toolkit.Common
 {
-    public class BaseComparable<T> where T : IComparable
+    public class BaseComparable<T> where T : IComparable<T>
     {
         private int comparisonCount = 0;
 

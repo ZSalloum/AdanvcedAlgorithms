@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Algorithms.Toolkit.Sorting
 {
     public class HeapSort<T> : BaseSort<T>
-        where T : IComparable
+        where T : IComparable<T>
     {
         private T[] data;
         private SortDirection direction;

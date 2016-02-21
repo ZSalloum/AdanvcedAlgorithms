@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Algorithms.Toolkit.Sorting
 {
     public class MergeSort<T> : BaseSort<T>
-        where T : IComparable
+        where T : IComparable<T>
     {
         private T[] tmp;
         private SortDirection direction;

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Algorithms.Toolkit.Sorting
 {
     public class BaseSort<T> : BaseComparable<T> 
-        where T : IComparable
+        where T : IComparable<T>
     {
 
         protected bool IsSorted(T[] a, int lo, int hi, SortDirection direction)

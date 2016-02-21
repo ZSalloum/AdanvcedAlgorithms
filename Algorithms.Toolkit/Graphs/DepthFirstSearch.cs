@@ -39,6 +39,8 @@ namespace Algorithms.Toolkit.Graphs
                     edgeTo[w] = v;
                 }
             }
+
+            OnVisited(v);
         }
 
     }
