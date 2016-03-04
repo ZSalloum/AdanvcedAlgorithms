@@ -59,6 +59,7 @@
     <Compile Include="MinMaxHeapUnitTest.cs" />
     <Compile Include="SortingUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnionFindUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Algorithms.Toolkit\Algorithms.Toolkit.csproj">

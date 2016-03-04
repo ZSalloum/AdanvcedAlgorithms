@@ -16,6 +16,29 @@ namespace Algorithms.Toolkit.DataStructures
 
         private List<UnionFindEntry> ids = new List<UnionFindEntry>();
 
+        public int Add(T data)
+        {
+            int newId = ids.Count;
+            ids.Add(new UnionFindEntry() { Data = data, Parent = newId });
+            return newId;
+        }
+
+        public void AddRange(T[] array)
+        {
+            foreach(T a in array)
+            {
+                Add(a);
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                return ids.Count;
+            }
+        }
+
         public void Merge(int id1, int id2)
         {
             int root1 = GetRoot(id1);
@@ -31,12 +54,17 @@ namespace Algorithms.Toolkit.DataStructures
             return root1 == root2;
         }
 
+        public void Clear()
+        {
+            ids.Clear();
+        }
+
         private int GetRoot(int id)
         {
             while(ids[id].Parent != id)
             {
                 int parent = ids[id].Parent;
-                ids[id].Parent = ids[parent].Parent; // paint to the grand parent on the go
+                ids[id].Parent = ids[parent].Parent; // link to the grand parent on the go
                 id = ids[id].Parent;
             }
 
