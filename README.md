@@ -1,3 +1,7 @@
+
+[![Build status](https://ci.appveyor.com/api/projects/status/ki3q9up5upqdsw3k?svg=true)](https://ci.appveyor.com/project/ZSalloum/algorithms-toolkit)
+
+
 # Algorithms.Toolkit
 
 (under construction) 
