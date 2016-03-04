@@ -13,7 +13,7 @@ This is a C# library intended to gather the most useful and most efficient algor
 ####DataStructures:
 - Min/Max Heap
 - UnionFind
-- RedBlack Tree (coming soon)
+- RedBlack Tree
 - Tries (coming soon)
 
 
