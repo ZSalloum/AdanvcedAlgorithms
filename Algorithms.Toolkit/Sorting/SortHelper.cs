@@ -13,5 +13,17 @@ namespace Algorithms.Toolkit.Sorting
             MergeSort<int> ms = new MergeSort<int>();
             ms.Sort(a, direction);
         }
+
+        public static void QuickSort(int[] a, SortDirection direction)
+        {
+            QuickSort<int> qs = new QuickSort<int>();
+            qs.Sort(a, direction);
+        }
+
+        public static void HeapSort(int[] a, SortDirection direction)
+        {
+            HeapSort<int> hs = new HeapSort<int>();
+            hs.Sort(a, direction);
+        }
     }
 }

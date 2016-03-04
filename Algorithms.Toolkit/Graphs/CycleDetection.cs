@@ -42,9 +42,9 @@ namespace Algorithms.Toolkit.Graphs
                 {
                     DFS(w, v);
                 }
-                else if (w != source)
-                {
-                    hasCycle = true; // if the marked node is not the one we are coming from (source) then this is a cycle.
+                else if (w != source) // if the marked node is not the one we are coming
+                {                     //  from (source) then this is a cycle.
+                    hasCycle = true; 
                     return;
                 }
             }

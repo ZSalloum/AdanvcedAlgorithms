@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Toolkit.DataStructures
 {
-    public class RedBlackTree<Key, Value> where Key : IComparable
+    public class RedBlackTree<Key, Value> where Key : IComparable<Key>
     {
         private enum NodeColor { Red, Black }
 
@@ -30,9 +30,25 @@ namespace Algorithms.Toolkit.DataStructures
             }
         }
 
+
+
         /***************************************************************************
          *  Red-black tree helper functions.
          ***************************************************************************/
+        private Node Put(Node h, Key k, Value v)
+        {
+            if (h == null) return new Node(k, v, NodeColor.Red);
+            int cmp = k.CompareTo(h.Key);
+            if (cmp > 0) h.Right = Put(h.Right, k, v);
+            if (cmp < 0) h.Left = Put(h.Left, k, v);
+            if (cmp == 0) h.Val = v;
+
+            if (!isRed(h.Left) && isRed(h.Right)) h = RotateLeft(h);
+            if (isRed(h.Left) && isRed(h.Left.Left)) h = RotateRight(h);
+            if (isRed(h.Left) && isRed(h.Right)) flipColors(h);
+
+            return h;
+        }
 
         // is node x red (and non-null) ?
         private bool isRed(Node x)
