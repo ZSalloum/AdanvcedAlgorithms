@@ -27,6 +27,7 @@ This is a C# library intended to gather the most useful and most efficient algor
 - Directed Graph
 - Edge Weighted Grapgh
 - Edge Weithed Undirected Graph
+
 ######Algorithms: 
 - Bipartite Detection
 - Breadth First Search
