@@ -22,6 +22,7 @@ This is a C# library intended to gather the most useful and most efficient algor
 
 
 ####Graphs: 
+######Structures: 
 - Undirected Graph
 - Directed Graph
 - Edge Weighted Grapgh
