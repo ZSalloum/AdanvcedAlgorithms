@@ -24,7 +24,7 @@ namespace Algorithms.Toolkit.Sorting
         {
             for (int i = lo; i < hi; i++)
             {
-                if (!Less(a[i], a[i + 1]))
+                if (!LessOrEqual(a[i], a[i + 1]))
                 {
                     return false;
                 }
@@ -36,7 +36,7 @@ namespace Algorithms.Toolkit.Sorting
         {
             for (int i = lo; i < hi; i++)
             {
-                if (!Greater(a[i], a[i + 1]))
+                if (!GreaterOrEqual(a[i], a[i + 1]))
                 {
                     return false;
                 }

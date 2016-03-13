@@ -20,6 +20,12 @@ namespace Algorithms.Toolkit.Sorting
             qs.Sort(a, direction);
         }
 
+        public static void ThreeWayQuickSort(int[] a, SortDirection direction)
+        {
+            ThreeWayQuickSort<int> qs = new ThreeWayQuickSort<int>();
+            qs.Sort(a, direction);
+        }
+
         public static void HeapSort(int[] a, SortDirection direction)
         {
             HeapSort<int> hs = new HeapSort<int>();

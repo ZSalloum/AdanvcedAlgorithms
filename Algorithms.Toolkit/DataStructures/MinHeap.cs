@@ -15,7 +15,7 @@ namespace Algorithms.Toolkit.DataStructures
 
         protected override bool Compare(T a, T b)
         {
-            return Greater(a, b);
+            return GreaterOrEqual(a, b);
         }
     }
 }

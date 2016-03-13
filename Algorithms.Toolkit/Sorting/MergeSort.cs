@@ -60,10 +60,10 @@ namespace Algorithms.Toolkit.Sorting
         {
             if(direction == SortDirection.Ascending)
             {
-                return Less(a, b);
+                return LessOrEqual(a, b);
             }
 
-            return Greater(a, b);
+            return GreaterOrEqual(a, b);
         }
 
     }

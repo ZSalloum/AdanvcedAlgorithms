@@ -23,16 +23,28 @@ namespace Algorithms.Toolkit.Common
             comparisonCount = 0;
         }
 
-        protected bool Less(T a, T b)
+        protected bool LessOrEqual(T a, T b)
         {
             comparisonCount++;
             return a.CompareTo(b) <= 0;
         }
 
-        protected bool Greater(T a, T b)
+        protected bool GreaterOrEqual(T a, T b)
         {
             comparisonCount++;
             return a.CompareTo(b) >= 0;
+        }
+
+        protected bool Less(T a, T b)
+        {
+            comparisonCount++;
+            return a.CompareTo(b) < 0;
+        }
+
+        protected bool Greater(T a, T b)
+        {
+            comparisonCount++;
+            return a.CompareTo(b) > 0;
         }
     }
 }

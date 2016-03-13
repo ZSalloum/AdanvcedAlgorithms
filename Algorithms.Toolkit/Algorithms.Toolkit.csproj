@@ -74,6 +74,7 @@
     <Compile Include="Sorting\Shuffle.cs" />
     <Compile Include="Sorting\SortDirection.cs" />
     <Compile Include="Sorting\SortHelper.cs" />
+    <Compile Include="Sorting\ThreeWayQuickSort.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

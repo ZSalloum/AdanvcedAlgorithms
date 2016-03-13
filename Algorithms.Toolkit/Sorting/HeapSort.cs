@@ -69,11 +69,11 @@ namespace Algorithms.Toolkit.Sorting
         {
             if(direction == SortDirection.Ascending)
             {
-                return Less(a, b);
+                return LessOrEqual(a, b);
             }
             else // (direction == SortDirection.Descending)
             {
-                return Greater(a, b);
+                return GreaterOrEqual(a, b);
             }
 
             
