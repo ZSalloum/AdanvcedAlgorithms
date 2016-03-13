@@ -12,7 +12,7 @@ This is a C# library intended to gather the most useful and most efficient algor
 - QuickSort
 - MergeSort
 - HeapSort
-- 3Way QuickSort (coming soon)
+- 3Way QuickSort
 
 ####DataStructures:
 - Min/Max Heap
