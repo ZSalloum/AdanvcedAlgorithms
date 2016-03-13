@@ -22,12 +22,12 @@ This is a C# library intended to gather the most useful and most efficient algor
 
 
 ####Graphs: 
-- ######Structures: 
+  ######Structures: 
 - Undirected Graph
 - Directed Graph
 - Edge Weighted Grapgh
 - Edge Weithed Undirected Graph
-- ######Algorithms: 
+  ######Algorithms: 
 - Bipartite Detection
 - Breadth First Search
 - Depth First Search
