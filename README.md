@@ -22,4 +22,17 @@ This is a C# library intended to gather the most useful and most efficient algor
 
 
 ####Graphs: 
-(coming soon)
+- Undirected Graph
+- Directed Graph
+- Edge Weighted Grapgh
+- Edge Weithed Undirected Graph
+- Bipartite Detection
+- Breadth First Search
+- Depth First Search
+- Connected Components
+- Strongly Connected Components
+- Cycle Detection
+- Kurskal Minimum Span Tree
+- Lazy Prim Minimum Span Tree
+- Shortest Path Tree
+- Topological Sort
