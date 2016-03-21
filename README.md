@@ -12,7 +12,7 @@ This is a C# library intended to gather the most useful and most efficient algor
 - QuickSort
 - MergeSort
 - HeapSort
-- 3Way QuickSort (coming soon)
+- 3Way QuickSort
 
 ####DataStructures:
 - Min/Max Heap
@@ -22,4 +22,20 @@ This is a C# library intended to gather the most useful and most efficient algor
 
 
 ####Graphs: 
-(coming soon)
+######Structures: 
+- Undirected Graph
+- Directed Graph
+- Edge Weighted Grapgh
+- Edge Weithed Undirected Graph
+
+######Algorithms: 
+- Bipartite Detection
+- Breadth First Search
+- Depth First Search
+- Connected Components
+- Strongly Connected Components
+- Cycle Detection
+- Kurskal Minimum Span Tree
+- Lazy Prim Minimum Span Tree
+- Shortest Path Tree
+- Topological Sort
