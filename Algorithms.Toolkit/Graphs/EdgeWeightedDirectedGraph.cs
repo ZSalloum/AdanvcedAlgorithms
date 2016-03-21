@@ -14,7 +14,7 @@ namespace Algorithms.Toolkit.Graphs
         public EdgeWeightedDirectedGraph(int count)
         {
             edgeCount = 0;
-            var adjacents = new List<int>[count];
+            adjacents = new List<DirectedEdge>[count];
             for (int i = 0; i < count; i++)
             {
                 adjacents[i] = null;
@@ -23,7 +23,7 @@ namespace Algorithms.Toolkit.Graphs
 
         public DirectedEdge[] AdjacentsOf(int v)
         {
-            return adjacents[v].ToArray();
+            return adjacents[v]?.ToArray();
         }
 
         public int EdgeCount

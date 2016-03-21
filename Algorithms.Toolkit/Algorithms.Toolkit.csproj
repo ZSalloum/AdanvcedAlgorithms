@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Common\BaseComparable.cs" />
     <Compile Include="DataStructures\BaseHeap.cs" />
+    <Compile Include="DataStructures\IndexMinPriorityQueue.cs" />
     <Compile Include="DataStructures\MinHeap.cs" />
     <Compile Include="DataStructures\MaxHeap.cs" />
     <Compile Include="DataStructures\RedBlackTree.cs" />

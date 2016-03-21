@@ -56,6 +56,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="GraphUnitTest.cs" />
     <Compile Include="MinMaxHeapUnitTest.cs" />
     <Compile Include="SortingUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
