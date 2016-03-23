@@ -23,7 +23,11 @@ namespace Algorithms.Toolkit.Graphs
 
         public DirectedEdge[] AdjacentsOf(int v)
         {
-            return adjacents[v]?.ToArray();
+            if(adjacents[v] == null)
+            {
+                return new DirectedEdge[0];
+            }
+            return adjacents[v].ToArray();
         }
 
         public int EdgeCount
@@ -64,17 +68,21 @@ namespace Algorithms.Toolkit.Graphs
             for (int v = 0; v < VerticesCount; v++)
             {
                 int selfLoops = 0;
-                foreach (DirectedEdge e in AdjacentsOf(v))
+                DirectedEdge[] _edges = AdjacentsOf(v);
+                if (_edges != null)
                 {
-                    if (e.To> v)
+                    foreach (DirectedEdge e in _edges)
                     {
-                        list.Add(e);
-                    }
-                    // only add one copy of each self loop (self loops will be consecutive)
-                    else if (e.To == v)
-                    {
-                        if (selfLoops % 2 == 0) list.Add(e);
-                        selfLoops++;
+                        if (e.To > v)
+                        {
+                            list.Add(e);
+                        }
+                        // only add one copy of each self loop (self loops will be consecutive)
+                        else if (e.To == v)
+                        {
+                            if (selfLoops % 2 == 0) list.Add(e);
+                            selfLoops++;
+                        }
                     }
                 }
             }

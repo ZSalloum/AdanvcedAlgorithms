@@ -63,18 +63,7 @@ namespace Algorithms.Toolkit.UnitTest
         public void Should_Create_EdgeWeightedDirectedGraph()
         {
             //given
-            EdgeWeightedDirectedGraph g = new EdgeWeightedDirectedGraph(8);
-            DirectedEdge[] edges = { new DirectedEdge(0, 1, 10), new DirectedEdge(0, 7, 10), new DirectedEdge(0, 4, 10),
-                                    new DirectedEdge(1, 2, 10), new DirectedEdge(1, 3, 10), new DirectedEdge(1, 7, 10),
-                                    new DirectedEdge(2, 3, 10), new DirectedEdge(2, 6, 10),
-                                    new DirectedEdge(3, 6, 10),
-                                    new DirectedEdge(4, 5, 10), new DirectedEdge(4, 6, 10), new DirectedEdge(4, 7, 10),
-                                    new DirectedEdge(5, 2, 10), new DirectedEdge(5, 6, 10),
-                                    new DirectedEdge(7, 5, 10), new DirectedEdge(7, 2, 10) };
-            foreach(DirectedEdge e in edges)
-            {
-                g.AddEdge(e);
-            }
+            EdgeWeightedDirectedGraph g = CreateEdgeWeightedDirectedGraph();
             //when
 
             //then
@@ -101,6 +90,34 @@ namespace Algorithms.Toolkit.UnitTest
 
             tmp = g.AdjacentsOf(7);
             Assert.IsTrue(MatchEdges(7, tmp, 5, 2));
+        }
+
+
+        [TestMethod]
+        public void Should_Compute_ShortestPathTree()
+        {
+
+            // given
+            EdgeWeightedDirectedGraph g = CreateEdgeWeightedDirectedGraph();
+
+            //when
+            ShortestPathTree spt = new ShortestPathTree(g, 0);
+
+            //then
+            DirectedEdge[] path = spt.PathTo(6);
+            Assert.IsTrue(IsRightPath(path, 0, 4, 5, 2, 6));
+
+            path = spt.PathTo(3);
+            Assert.IsTrue(IsRightPath(path, 0, 4, 5, 2, 3));
+
+            path = spt.PathTo(5);
+            Assert.IsTrue(IsRightPath(path, 0, 4, 5));
+
+            path = spt.PathTo(7);
+            Assert.IsTrue(IsRightPath(path, 0, 7));
+
+            path = spt.PathTo(1);
+            Assert.IsTrue(IsRightPath(path, 0, 1));
         }
 
 
@@ -132,6 +149,47 @@ namespace Algorithms.Toolkit.UnitTest
 
             return true;
 
+        }
+
+        private EdgeWeightedDirectedGraph CreateEdgeWeightedDirectedGraph()
+        {
+            EdgeWeightedDirectedGraph g = new EdgeWeightedDirectedGraph(8);
+            DirectedEdge[] edges = { new DirectedEdge(0, 1, 5), new DirectedEdge(0, 7, 8), new DirectedEdge(0, 4, 9),
+                                    new DirectedEdge(1, 2, 12), new DirectedEdge(1, 3, 15), new DirectedEdge(1, 7, 4),
+                                    new DirectedEdge(2, 3, 3), new DirectedEdge(2, 6, 11),
+                                    new DirectedEdge(3, 6, 9),
+                                    new DirectedEdge(4, 5, 4), new DirectedEdge(4, 6, 20), new DirectedEdge(4, 7, 5),
+                                    new DirectedEdge(5, 2, 1), new DirectedEdge(5, 6, 13),
+                                    new DirectedEdge(7, 5, 6), new DirectedEdge(7, 2, 7) };
+            foreach (DirectedEdge e in edges)
+            {
+                g.AddEdge(e);
+            }
+            return g;
+        }
+
+        private bool IsRightPath(DirectedEdge[] path, params int[] nodes)
+        {
+            if(path != null && path.Length > 0)
+            {
+                List<int> tmp = new List<int>();
+                tmp.Add(path[0].From);
+                foreach(DirectedEdge e in path)
+                {
+                    tmp.Add(e.To);
+                }
+
+                if (tmp.Count != nodes.Length) return false;
+
+                for(int i = 0; i < nodes.Length; i++)
+                {
+                    if (nodes[i] != tmp[i]) return false;
+                }
+
+                return true;
+            }
+
+            return false;
         }
     }
 }

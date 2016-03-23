@@ -11,6 +11,7 @@ namespace Algorithms.Toolkit.Graphs
     {
         private double[] distTo;
         private DirectedEdge[] edgeTo;
+        private IndexMinPriorityQueue<Double> pq;
 
         public ShortestPathTree(EdgeWeightedDirectedGraph G, int s)
         {
@@ -27,7 +28,7 @@ namespace Algorithms.Toolkit.Graphs
             distTo[s] = 0.0;
 
             // relax vertices in order of distance from s
-            IndexMinPriorityQueue<Double> pq = new IndexMinPriorityQueue<Double>(G.VerticesCount);
+            pq = new IndexMinPriorityQueue<Double>(G.VerticesCount);
             pq.Insert(s, distTo[s]);
             while (!pq.IsEmpty)
             {
@@ -61,6 +62,10 @@ namespace Algorithms.Toolkit.Graphs
             {
                 edgeTo[w] = edge;
                 distTo[w] = distTo[v] + edge.Weight;
+                if (pq.Contains(w))
+                    pq.DecreaseKey(w, distTo[w]);
+                else
+                    pq.Insert(w, distTo[w]);
             }
         }
     }
